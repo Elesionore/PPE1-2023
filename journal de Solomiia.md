@@ -34,14 +34,19 @@ miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/img$
 miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/img$ cd ..
 miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ ls
 ann  damier.bmp  img  test.wav  txt
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ cd ann
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/ann$ ls
-2016  2017  2018
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/ann$ cd ..
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ cd txt
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/txt$ ls
-2016  2017  2018
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/txt$ cd ..
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ cd img
-miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers/img$ ls
-Paris  Tokyo
+miya@andromeda:~/Pictures/Desktop/ sudo apt install tree
+miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ tree -d
+.
+├── ann
+│   ├── 2016
+│   ├── 2017
+│   └── 2018
+├── img
+│   ├── Paris
+│   └── Tokyo
+└── txt
+    ├── 2016
+    ├── 2017
+    └── 2018
+
+11 directories
