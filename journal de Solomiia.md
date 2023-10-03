@@ -52,3 +52,7 @@ miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ tree
 11 directories
 
 I am adding new phrases in web version of Git, i want to see if it commits changes
+Seems i have done it...with the help of tokens
+
+## what if i add more phrases ?
+
