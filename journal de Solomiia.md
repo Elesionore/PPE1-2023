@@ -50,3 +50,5 @@ miya@andromeda:~/Pictures/Desktop/Programmation et projet encadre/fichiers$ tree
     └── 2018
 
 11 directories
+
+adding new phrases in web version of Git, i want to see if it commits changes
