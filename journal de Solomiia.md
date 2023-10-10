@@ -1,17 +1,21 @@
 Salut !
 Je commence...
 
-26/09/23
+#26/09/23
  
 J'ai crée une arborescence via terminal de Linux. Andromeda c'est mon ordi; Miya c'est moi. Comment ça était ?
 
-# je veux observer tous les fichiers dans le dossier
+je veux observer tous les fichiers dans le dossier
+
 ls
  00-Introduction.pdf   fichiers    'Programmation et projet encadre 1'
  00-Shell.pdf          PPE1_2.pdf
-# création des dossiers pour classification
+
+création des dossiers pour classification
+
 mkdir txt ann img
-# je déplace des fichiers selon leurs extensions vers des dossiers appropriés
+
+je déplace des fichiers selon leurs extensions vers des dossiers appropriés
 mv *.txt ./txt
 mv *.ann ./ann
 mv *.jpg ./img
@@ -57,7 +61,7 @@ tree -d
 
 
 
-03/10/23
+#03/10/23
 
 I am adding new phrases in web version of Git, i want to see if it commits changes
 Seems i have done it...with the help of tokens
@@ -70,7 +74,7 @@ Seems i have done it...with the help of tokens
 
 
 
-10/10/23
+#10/10/23
 
 J'ai fait les exercices: annuler le commit, créer un tag, retourner vers la premiere version.
 Voila j'ai copié les commandes du terminal.
