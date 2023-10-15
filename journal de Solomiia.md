@@ -149,7 +149,22 @@ La commande wc de Linux vous permet de compter le nombre de lignes, de mots, de 
 
 
 
+Comment ajouter une image ?
 
+    • Chercher “markdown image”
+    • sauvegarder creer hyperlien sur cette image
 
+J’ai essayé de trouver la location, mais…
+
+    • cat ./2016/*/* | grep Location | cut -f 3 | uniq -c | sort -nr
+    • cat: './2016/*/*': No such file or directory
+
+    • chmod +x script.sh
+    • ./script.sh
+    • ./script.sh toto
+    • vim test.sh
+    • chmod +x test.sh
+    • ./test
+    • ./test.sh bonjour tout le monde
 
 
