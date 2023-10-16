@@ -167,4 +167,80 @@ J’ai essayé de trouver la location, mais…
     • ./test
     • ./test.sh bonjour tout le monde
 
+# 16/10/23 exos pour séance 4
+
+J’ai essayé de compter le nombre d’annotations par année, mais un problème s’est apparu :
+
+    • cat 2016/*/*.ann | wc -l
+    • cat: '2016/*/*.ann': No such file or directory
+      0
+
+Donc, j’ai vérifié si cette commande marche en générale :
+
+    • cat *.ann | wc -l
+      24182
+Ça marche et je vais trouver comment spécifier l’année dans le nom :
+
+    • cat 2016*.ann | wc -l 
+      9442
+    • cat 2017*.ann | wc -l 
+      7179
+    • cat 2018*.ann | wc -l 
+      7561
+
+Maintenant il faut limiter ce comptage aux lieux :
+ 
+    • cat 2016* |grep Location | wc -l 
+      3144
+    • cat 2017* |grep Location | wc -l
+      2466
+    • cat 2018* |grep Location | wc -l 
+      3110
+
+Je vais sauvegarder ces résultats dans un fichier :
+
+    • echo "Location en 2016" >> Location.txt
+    • cat 2016*.ann | grep Location | wc -l >> Location.txt
+      
+    • echo "Location en 2017" >> Location.txt
+    • cat 2017*.ann | grep Location | wc -l >> Location.txt
+      
+    • echo "Location en 2018" >> Location.txt
+    • cat 2018*.ann | grep Location | wc -l >> Location.txt
+
+Pendant cet étape j’ai observé que > remplace le contenu déjà existant et sur le slide 17 j’ai lu qu’il faut utiliser >>   
+
+C’est le temps pour établir le classement des lieux les plus cités :
+
+    • echo "Classement des lieux les plus cités en 2016" > lieux.txt
+    • cat 2016*.ann | grep Location | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 >> lieux.txt
+      
+    • echo "Classement des lieux les plus cités en 2017" >> lieux.txt
+    • cat 2017*.ann | grep Location | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 >> lieux.txt
+      
+    • echo "Classement des lieux les plus cités en 2018" >> lieux.txt
+    • cat 2018*.ann | grep Location | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 >> lieux.txt
+      
+Enfin je veux trouver les annotations les plus fréquentes pour le mois du juin :
+
+    • cat */06/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head
+      cat: '*/06/*.ann': No such file or directory
+
+Magnifique :/ Le même problème. Un autre façon...
+
+    • cat *06*.ann | cut -f 3 | sort | uniq -c | sort -nr | head
+     84 France
+     34 Paris
+     34 2016
+     26 21h
+     18 Europe
+     18 États-Unis
+     16 2015
+     15 Rio
+     15 18h
+     15 12 juin 2016
+
+
+Je l’ai fait !
+
 
