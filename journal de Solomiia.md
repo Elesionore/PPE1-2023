@@ -156,6 +156,15 @@ Les commandes du séance 4 :
     • uniq (regroupe les entrées redondantes en une seule entrée sans doublets)
     • echo (renvoie l'argument)
 
+Essentiel sur les scripts bash :
+
+    • "#" (écrire un commentaire)
+    • "#!/usr/bin/bash" (obligatoire au début du script pour indiquer à la machine qu'il s'agit d'un fichier script bash)
+    • "chmod +x <nom_script.sh>" (à entrer dans le terminal afin de rendre le fichier exécutable)
+    • les variables, ex : dico="anglais"
+    • les arguments, ex : $1, $2, $3, etc (pour faire appel à un script, après l'avoir rendu exécutable, utiliser la commande : bash <nom_scritp.md>)
+
+
 Comment ajouter une image ?
 
     • Chercher “markdown image”
