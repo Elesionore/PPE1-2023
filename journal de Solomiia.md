@@ -250,4 +250,4 @@ Magnifique :/ Le même problème. Un autre façon...
 
 Je l’ai fait !
 
-
+P.S. Je vais ajouter le screenshot de mon terminal de tout le processus en format pdf.
