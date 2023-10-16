@@ -148,6 +148,7 @@ La commande wc de Linux vous permet de compter le nombre de lignes, de mots, de 
     • cat *.txt | wc
 
 Les commandes du séance 4 :
+
     • cat (concatène le contenu des fichiers)
     • wc (affiche le nombre de lignes, de mots et d'octet)
     • grep (lancer une expression régulière pour trouver mot/symbole)
