@@ -1,7 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-YEAR=$1
-ENTITY=$2
+echo "Location en 2016"
+cat /home/miya/Pictures/Desktop/Programmation et projet encadre/PPE1-2023-etudiante/2016*/*.ann | grep Location | wc -l 
 
-NUMBER_ENTITY=$(cat /home/miya/Downloads\ LINUX/Fichiers$YEAR |egrep $ENTITY |wc -l)
-echo "Number of files of $ENTITY for $YEAR: $NUMBER_ENTITY"
+echo "Location en 2017" 
+cat /home/miya/Pictures/Desktop/Programmation et projet encadre/PPE1-2023-etudiante/2017*/*.ann | grep Location | wc -l 
+
+echo "Location en 2018" 
+cat /home/miya/Pictures/Desktop/Programmation et projet encadre/PPE1-2023-etudiante/2018*/*.ann | grep Location | wc -l 
