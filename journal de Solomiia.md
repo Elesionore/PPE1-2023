@@ -279,6 +279,8 @@ Pour l’exercice 2 :
     • bash reponse2.sh * 02
     • ls $1 $2
 
+CONDITIONS
+
 Si les arguments sont corrects, je lance le programme, sinon j’émets un message d’erreur et j’arrête le script.
 
     • if [ condition ]
@@ -377,4 +379,49 @@ Les boucles WHILE (« tant qu’une condition est vraie, on recommence... ») :
         ◦ echo " je continue à boucler " ;
     • done
 
+Exemple :
 
+    • N=0
+    • while [ $N -lt 10 ]
+    • do
+        ◦ echo “on en est à $N”
+        ◦ N=$(expr $N + 1)
+    • done
+      
+    • echo on a fini”
+
+! Ctrl + C va arrêter le programme forcement
+
+Exemple 2 :
+
+    • while read LINE
+    • do 
+        ◦ echo « la ligne est : $LINE »
+    • done < ./reponses.txt
+      
+    • echo « on a fini »
+
+Exemple 3 :
+
+    • #!/ usr/ bin/ bash
+    • if [ $# -ne 1 ]
+    • then
+        ◦ echo " ce programme demande un argument "
+            ▪ exit
+    • fi
+    • FICHIER_URLS = $1
+    • OK =0
+    • NOK =0
+    • while read -r LINE ;
+    • do
+        ◦ echo " la ligne : $LINE "
+        ◦ if [[ $LINE =∼ ^ https ?:// ]]
+        ◦ then
+            ▪ echo " ressemble à une URL valide "
+            ▪ OK =$( expr $OK + 1)
+        ◦ else
+            ▪ echo " ne ressemble pas à une URL valide "
+            ▪ NOK =$ ( expr $NOK + 1)
+        ◦ fi
+    • done < $FICHIER_URLS
+    • echo " $OK URLs et $NOK lignes douteuses "
