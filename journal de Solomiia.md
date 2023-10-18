@@ -425,3 +425,17 @@ Exemple 3 :
         ◦ fi
     • done < $FICHIER_URLS
     • echo " $OK URLs et $NOK lignes douteuses "
+
+LYNX
+
+récupérer juste texte, pas de liens
+
+    • lynx -dump -nolist plurital.org
+
+CURL
+
+trouver l’info du site
+
+    • curl -i https://www.perdu.com
+
+
