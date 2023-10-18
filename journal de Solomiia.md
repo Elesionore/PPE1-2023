@@ -195,6 +195,7 @@ Donc, j’ai vérifié si cette commande marche en générale :
 
     • cat *.ann | wc -l
       24182
+
 Ça marche et je vais trouver comment spécifier l’année dans le nom :
 
     • cat 2016*.ann | wc -l 
@@ -260,3 +261,120 @@ Magnifique :/ Le même problème. Un autre façon...
 Je l’ai fait !
 
 P.S. Je vais ajouter le screenshot de mon terminal de tout le processus en format pdf.
+
+# 18/10/23 séance 5
+
+Pour faire un script exécutable (3 façons ) :
+
+    • chmod +x [FICHIER]
+    • ./FICHIER.sh
+    • bash ./FICHIER.sh
+
+Pour l’exercice 1 :
+
+    • bash question1.sh LOCATION 2016
+
+Pour l’exercice 2 :
+
+    • bash reponse2.sh * 02
+    • ls $1 $2
+
+Si les arguments sont corrects, je lance le programme, sinon j’émets un message d’erreur et j’arrête le script.
+
+    • if [ condition ]
+    • then
+        ◦ echo " la condition est valide "
+    • else
+        ◦ echo " la condition n ’ est pas valide "
+    • fi
+
+    • Conditions possibles :
+
+    • f fichier vrai si le fichier existe
+    • -d dossier vrai si le dossier existe
+    • -s fichier vrai si le fichier existe et n’est pas vide
+      
+Sur des chaînes de caractères :
+
+    • = ou != tester si deux chaînes sont identiques (=) ou différentes (!=)
+    • < ou > pour déterminer si in chaîne est avant ou après une autre dans
+    • l’ordre alphabétique
+    • -n chaine vrai si la chaîne n’est pas vide
+    • -z vrai si la chaîne est vide (ex: argument non fourni)
+
+Sur les entiers :
+
+    • a -eq b si a est égal à b (equal)
+    • a -ne b si a est différent de b (not equal)
+    • a -lt b si a est plus petit que b (less than)
+    • a -gt b si a est plus grand que b (greater than)
+    • a -le b si a est inférieur ou égal à b
+    • a -ge b si a supérieur ou égal à b
+
+Exemple :
+
+    • if [[ $1 =∼ bon ( jour | soir ) ]]
+    • then
+        ◦ echo " salut "
+    • fi
+    • echo ‘fin du programme’
+
+!! on peut arrêter l’exécution du script à tout moment avec la commande exit
+
+
+L’ARGUMENT N’EST PAS VIDE
+
+    • echo « le premier argument : ($1) »
+    • if [ -n $1 ]
+    • then
+        ◦ echo “le premier argument n’est pas vide”
+        ◦ if [[ $1 =∼ bon ( jour | soir ) ]]
+        ◦ then
+            ▪ echo " salut "
+        ◦ fi
+    • else 
+        ◦ echo “le premier argument n’est pas vide”
+    • fi
+    • echo “fin du programme”
+
+L’ARGUMENT EST VIDE 
+
+    • echo « le premier argument : ($1) »
+    • if [ -z $1 ]
+    • then
+        ◦ echo “le premier argument est vide”
+        ◦ exit
+    • fi
+
+    • echo “le premier argument n’est pas vide”
+    • if [[ $1 =∼ bon ( jour | soir ) ]]
+        ◦ then
+            ▪ echo " salut "
+        ◦ exit
+    • fi
+    • echo “fin du programme”
+
+Les boucles FOR (« pour tout élément, faire... »)
+
+    • N =0
+    • for ELEMENT in a b c d e
+    • do
+        ◦ N = $ ( expr $N + 1)
+        ◦ echo " le $N ieme élément est $ELEMENT "
+    • done
+
+Exemple avec séquence :
+
+    • for val in $(seq 3 12)
+    • do 
+        ◦ echo “val vaut $val”
+    • done
+
+Les boucles WHILE (« tant qu’une condition est vraie, on recommence... ») : 
+
+    • while [ condition ];
+    • do
+        ◦ echo " je continue à boucler " ;
+    • done
+
+
