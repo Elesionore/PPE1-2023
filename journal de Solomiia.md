@@ -452,4 +452,10 @@ Finalement, tout s'est bien passé. J'ai mis à jour les 4 scripts dans le dossi
     • exo_script_2.sh    
     • exo_script_3.sh
 
+Je joins 3 scripts bash qui vérifient l'exécution des scripts à travers une condition :
+      
+    • validation_script_1.sh
+    • validation_script_2.sh    
+    • validation_script_3.sh
+
 Je joins également une capture d'écran avec les résultats de l'exécution du script dans le terminal sous le nom ‘Scripts_sont_bons.pdf’
