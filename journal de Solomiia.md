@@ -439,3 +439,17 @@ trouver l’info du site
     • curl -i https://www.perdu.com
 
 
+# 22/10/23 ajout de la validation des arguments
+
+J'ai vérifié si mes scripts fonctionnaient. Non. J'ai dû changer beaucoup de choses. Dans le terminal, je vérifiais constamment si le résultat apparaissait lorsque le script était exécuté. Pour exécuter le script, j'ai utilisé la commande 
+
+    • sh ./bash_script.sh
+
+Finalement, tout s'est bien passé. J'ai mis à jour les 4 scripts dans le dossier ‘Exercices séance 4’ :
+
+    • bash_script.sh  
+    • exo_script_1.sh
+    • exo_script_2.sh    
+    • exo_script_3.sh
+
+Je joins également une capture d'écran avec les résultats de l'exécution du script dans le terminal sous le nom ‘Scripts_sont_bons.pdf’
