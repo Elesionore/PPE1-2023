@@ -460,7 +460,7 @@ Je joins 3 scripts bash qui vérifient l'exécution des scripts à travers une c
 
 Je joins également une capture d'écran avec les résultats de l'exécution du script dans le terminal sous le nom ‘Scripts_sont_bons.pdf’
 
-#25/10/23 séance 6
+# 25/10/23 séance 6
 Pour aujourd’hui il faut récupérer les URL contenues dans un fichier texte, écrire sur le terminal des informations séparées par des tabulations.
 
       while read -r line;
