@@ -468,4 +468,5 @@ Pour aujourd’hui il faut récupérer les URL contenues dans un fichier texte, 
       	echo ${line};
       done < "urls/fr.txt";
 
+J'ai ajouté parametre INFILE
 
