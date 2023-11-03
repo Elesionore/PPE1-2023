@@ -467,6 +467,106 @@ Pour aujourd’hui il faut récupérer les URL contenues dans un fichier texte, 
       do
       	echo ${line};
       done < "urls/fr.txt";
+      
+J'ai ajouté paramètre INFILE et créé un fichier bash « miniprojet.sh ».
 
-J'ai ajouté parametre INFILE
 
+
+# 03/11/23 dévoir 6
+
+Il y a un autre façon comment transformer "urls/fr.txt" en paramètre du script :
+
+      #!/bin/bash
+      
+      if [ $# -ne 1 ]
+      do 
+          echo "pas bon argument" 
+      
+          exit
+      else 
+          if [ -f $filepath ]
+          then 
+              echo "on a bien un fichier"
+          else 
+              echo "on attend un fichier qui existe"
+              exit
+          fi
+      done
+      
+      filepath=$1
+      lineno=1
+      while read -r line;
+      do
+          echo -e "${lineno}\t${line}"
+          lineno=$(expr $lineno + 1)
+      done < "$filepath";
+
+
+Maintenant il faut vérifier si l’argument est bon et afficher le numéro de ligne avant chaque URL et le code HTTP de réponse à la requête. 
+
+J’avais des erreurs, car j’ai mélangé while et then, if et do. Il fallait utiliser if-fi avec then et while avec do-done.
+
+      #!/bin/bash
+      
+      filepath=$1
+      
+      if [ $# -ne 1 ]
+      then 
+          echo "pas bon argument, entrer le nom d'un fichier" 
+          exit
+      else 
+          if [ -f "$1" ]
+          then 
+              echo "on a bien un fichier"
+          else 
+              echo "on attend un fichier qui existe"
+              exit
+          fi
+      fi
+      
+      A=1
+      
+      while read -r line
+      do
+          codeHTTP=$(curl -sI $line | egrep -m 1 "^HTTP")
+      	echo "$A    $line $codeHTTP"
+          A=$(expr $A + 1)
+      done < "$1"
+
+J’ai crée un fichier bash « miniprojet1.sh » avec ce programme.
+
+Maintenant je voudrais voir l’encodage de la page et pour cela j’ai crée un autre fichier « miniprojet2.sh », parce que si je colle ces 2 morceaux du code, ça commence à travailler bizarrement.
+
+      #!/bin/bash
+      
+      filepath=$1
+      
+      if [ $# -ne 1 ]
+      then 
+          echo "pas bon argument, entrer le nom d'un fichier" 
+          exit
+      else 
+          if [ -f "$1" ]
+          then 
+              echo "on a bien un fichier"
+          else 
+              echo "on attend un fichier qui existe"
+              exit
+          fi
+      fi
+      
+      A=1
+      
+      while read -r line
+      do
+          if curl -sI $line | egrep  "charset="
+          then 
+              encodage=$(curl -sI $line | egrep -q "charset=")
+      	    echo "$A    ${line} ${encodage}"
+          else
+              echo "$A    ${line} pas d'encodage ici"
+          fi
+          A=$(expr $A + 1)
+      done < "$1"
+
+Comme l’épreuve, j’ajoute la capture d’écran de mon terminal (le fichier « miniprojet.pdf » dans dossier miniprojet).
