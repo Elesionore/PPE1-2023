@@ -570,3 +570,5 @@ Maintenant je voudrais voir l’encodage de la page et pour cela j’ai crée un
       done < "$1"
 
 Comme l’épreuve, j’ajoute la capture d’écran de mon terminal (le fichier « miniprojet.pdf » dans dossier miniprojet).
+
+test1
