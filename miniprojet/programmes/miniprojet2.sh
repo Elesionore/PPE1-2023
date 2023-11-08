@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 filepath=$1
 
@@ -22,7 +22,7 @@ while read -r line
 do
     if curl -sI $line | egrep  "charset="
     then 
-        encodage=$(curl -sI $line | egrep -q "charset=")
+        encodage=$(curl -s I $line | head -1 | grep -q "charset=\$+")
 	    echo "$A    ${line} ${encodage}"
     else
         echo "$A    ${line} pas d'encodage ici"
