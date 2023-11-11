@@ -572,4 +572,67 @@ Maintenant je voudrais voir l’encodage de la page et pour cela j’ai crée un
 Comme l’épreuve, j’ajoute la capture d’écran de mon terminal (le fichier « miniprojet.pdf » dans dossier miniprojet).
 
 
-1223
+# 11/11/23 création d’une table, correction du script précédent et exos sur candide.txt
+
+Donc, après une journée d’erreurs, recherche et consultation avec amis, j’ai forcé mon script de récupérer le code de la réponse et l’encodage (tout ça en format adéquat !!)
+
+Mon code sous le nom miniprojet3.sh :
+
+      #!/usr/bin/env bash
+      
+      filepath=$1 
+      
+      n=0
+      
+      if [ $# -eq 1 ]; 
+      	then 
+          while read -r line
+              do
+              n=$((n + 1))
+              infos=$(curl -Is "$line")
+      		response=$(echo "$infos" | grep -oE "^HTTP/[0-9](\.[0-9])? [0-9]{3}" | awk '{print $2}') 
+              encoding=$(echo "$infos" | awk -F"charset=" '/charset=/ {print $2; exit}' | tr -d ';\r\n')
+              echo "$n\t$response\t$encoding\t$line"
+      
+          done < "$1" > "/home/miya/Pictures/Desktop/Programmation et projet encadre/PPE1-2023-etudiante/miniprojet/tableaux/tableau.csv"
+      else
+          echo "Vous devez saisir le chemin d'un fichier'"
+      	exit
+      fi
+
+Puis, j’ai crée une table en html. J’avais déjà travaille avec html et css, donc c’était très facile. Il y a un peu de design (background-color et borders).
+
+Les exercices avec candide.txt. J’ai deviné comment faire les deux premiers.
+
+preparation_fichier.sh
+
+      #!/usr/bin/env bash
+      
+      file=$1
+      if [ $# -ne 1 ]
+      then
+      	echo "Veuillez saisir un chemin d'un fichier'"
+      	exit
+      fi
+      
+      egrep -o "\w+" "$file" | tr "[:upper:]" "[:lower:]" | tr -d "?.,;:!()[]"
+
+ frequence_mots.sh
+
+      #!/usr/bin/env bash
+      
+      filename="$1"
+      nb_words="$2"
+      
+      ./preparation_fichier.sh "$filename" > mots_courants.txt
+      
+      if [ -z "$filename" ]
+      then
+          echo "Veuillez saisir le chemin d'un fichier et le nombre de mots"
+      else
+          echo "Mots les plus courants : "
+          cat ./mots_courants.txt | sort | uniq -c | sort -nr | head -n $nb_words
+      fi
+
+Le troisième exo me fait pleurer. Je ne sais comment le faire fonctionner.
+
