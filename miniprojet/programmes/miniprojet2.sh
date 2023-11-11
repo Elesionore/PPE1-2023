@@ -4,7 +4,7 @@ filepath=$1
 
 if [ $# -ne 1 ]
 then 
-    echo "pas bon argument, entrer le nom d'un fichier" 
+    echo "pas bon argument, entrer le chemin d'un fichier" 
     exit
 else 
     if [ -f "$1" ]
@@ -16,10 +16,11 @@ else
     fi
 fi
 
-A=1
+A=0
 
 while read -r line
 do
+    A=$((A + 1))
     if curl -sI $line | egrep  "charset="
     then 
         encodage=$(curl -s I $line | head -1 | grep -q "charset=\$+")
