@@ -572,4 +572,4 @@ Maintenant je voudrais voir l’encodage de la page et pour cela j’ai crée un
 Comme l’épreuve, j’ajoute la capture d’écran de mon terminal (le fichier « miniprojet.pdf » dans dossier miniprojet).
 
 
-test
+1223
