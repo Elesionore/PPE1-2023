@@ -636,3 +636,6 @@ preparation_fichier.sh
 
 Le troisième exo me fait pleurer. Je ne sais comment le faire fonctionner.
 
+# 20/11/23
+
+J'ai récemment développé un tout nouveau script Bash qui simplifie considérablement la création d’un tableau. Je n’avais pas bcp du temps pour lui styliser..
